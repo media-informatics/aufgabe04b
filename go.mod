@@ -1,4 +1,4 @@
-module github.com/media-informatics/aufgabe04a
+module github.com/media-informatics/aufgabe04b
 
 go 1.19
 

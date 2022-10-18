@@ -15,7 +15,7 @@ import (
 )
 
 var (
-	fname  = flag.String("dir", ".", "directory to list")
+	fname  = flag.String("file", "./service/filecontent.proto", "path to file to list")
 	server = flag.String("server", service.Addr, "server address with port")
 )
 

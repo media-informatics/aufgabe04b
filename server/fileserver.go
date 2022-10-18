@@ -1,7 +1,6 @@
 package main
 
 import (
-	"context"
 	"flag"
 	"fmt"
 	"log"
@@ -14,14 +13,14 @@ import (
 )
 
 type FileServer struct {
-	service.UnimplementedDirectoryServer
+	service.UnimplementedFileContentServer
 }
 
 var (
 	server = flag.String("server", service.Addr, "server address with port")
 )
 
-func (ds *FileServer) GetContent(in *service.FileName, srv service.FileContentService_GetContentServer) error {
+func (ds *FileServer) GetContent(in *service.FileName, srv service.FileContent_GetContentServer) error {
 	fname := in.GetName()
 	log.Printf("received: %s", fname)
 	f, err := os.ReadFile(fname)
