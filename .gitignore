@@ -5,6 +5,9 @@
 *.so
 *.dylib
 
+# auto-generated go generate from  *.proto
+*.pb.go
+
 # Test binary, built with `go test -c`
 *.test
 

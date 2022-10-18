@@ -1,0 +1,17 @@
+syntax = "proto3";
+
+package service;
+
+option go_package = "github.com/media-informatics/aufgabe04b/service";
+
+service FileContent {
+    rpc GetContent(FileName) returns (stream Line) {}
+}
+
+message FileName {
+    string name = 1;
+}
+
+message Line {
+    string line = 1;
+}
