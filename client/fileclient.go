@@ -30,7 +30,7 @@ func main() {
 	defer conn.Close()
 
 	c := service.NewFileContentClient(conn)
-	ctx, cancel := context.WithTimeout(context.Background(), 3*time.Second)
+	ctx, cancel := context.WithTimeout(context.Background(), time.Second)
 	defer cancel()
 
 	stream, err := c.GetContent(ctx, &service.FileName{Name: *fname})

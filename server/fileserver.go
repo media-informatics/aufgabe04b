@@ -30,6 +30,12 @@ func (ds *FileServer) GetContent(in *service.FileName, srv service.FileContent_G
 	}
 
 	ctx := srv.Context()
+	deadline, ok := ctx.Deadline()
+	if ok {
+		log.Printf("context aborts at %v", deadline)
+	} else {
+		log.Printf("context has not deadline set")
+	}
 	lines := strings.Split(string(f), "\n")
 	log.Printf("read %d lines from %s", len(lines), fname)
 	for i, l := range lines {
